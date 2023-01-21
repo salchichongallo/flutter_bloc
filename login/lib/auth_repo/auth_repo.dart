@@ -5,7 +5,7 @@ enum AuthStatus { unknown, authenticated, guess }
 class AuthenticationRepo {
   final _controller = StreamController<AuthStatus>();
 
-  Stream<AuthStatus> get statuc async* {
+  Stream<AuthStatus> get status async* {
     await Future<void>.delayed(const Duration(seconds: 1));
     yield AuthStatus.guess;
     yield* _controller.stream;
